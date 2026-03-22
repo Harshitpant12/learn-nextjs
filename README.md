@@ -1,6 +1,7 @@
 # Next.js Learning Project
 
 This repository contains my experiments and learning about Next.js.
+A Simple repo built on next.js which includes basic features of login, signup and basic profile page.
 
 ## Getting Started
 
