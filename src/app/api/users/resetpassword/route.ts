@@ -12,8 +12,8 @@ export async function POST(request: NextRequest) {
         console.log(token, newPassword)
 
         const user = await User.findOne({
-            resetToken: token,
-            resetTokenExpiry: { $gt: Date.now() }
+            forgotPasswordToken: token,
+            forgotPasswordTokenExpiry: { $gt: Date.now() }
         })
 
         if(!user) {
