@@ -53,6 +53,9 @@ export default function LoginPage(){
             <Link href="/signup" className="text-sm text-gray-500 mt-4 hover:text-gray-700 transition-colors duration-300">
                 Don't have an account? Signup here
             </Link>
+            <Link href="/forgotpassword" className="text-sm text-gray-500 mt-4 hover:text-gray-700 transition-colors duration-300">
+                Forgot password? Reset here
+            </Link>
         </div>
     )
 }
