@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 import User from '@/models/userModel';
 import bcryptjs from 'bcryptjs';
 
-const sendEmail = async ({email, emailType, userId} : any) => {
+export const sendEmail = async ({email, emailType, userId} : any) => {
     try {
         // create a hashed token using bcryptjs
         const hashedToken = await bcryptjs.hash(userId.toString(), 10)
@@ -32,7 +32,9 @@ const sendEmail = async ({email, emailType, userId} : any) => {
             from: 'harshpant778@gmail.com',
             to: email,
             subject: emailType === 'VERIFY' ? 'Verify Your Account' : 'Reset Your Password',
-            html: `<p>Click <a href="${process.env.CLIENT_URL}/auth/${emailType.toLowerCase()}?token=${hashedToken}">here</a> to ${emailType === 'VERIFY' ? 'verify your account' : 'reset your password'}</p>`
+            html: `<p>Click <a href="${process.env.DOMAIN}/verifyemail?token=${hashedToken}">here</a> to ${emailType === 'VERIFY' ? 'verify your account' : 'reset your password'}
+            or copy and paste the following link in your browser: ${process.env.DOMAIN}/verifyemail?token=${hashedToken}
+            </p>`
         }
 
         const mailResponse = await transport.sendMail(mailOptions)
