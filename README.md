@@ -16,3 +16,14 @@ pnpm dev
 # or
 bun dev
 ```
+
+## Tech Stack
+
+- NextJS
+- TypeScript
+- MongoDB
+- MailTrap
+
+## Deployment
+
+[**View Live**](https://nextjs-fullstack-auth-seven.vercel.app/)
